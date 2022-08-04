@@ -100,10 +100,32 @@
     color: rgba(22, 24, 35, 0.5);
 }
 
+//Actions
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.actions-btn {
+    color: #888;
+    font-size: 2.2rem;
+    cursor: pointer;
+    padding: 4px 12px;
+    background-color: transparent;
+}
+
 .more-btn {
     padding: 4px 8px;
     font-size: 2rem;
     margin-left: 20px;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    object-fit: center;
+    border-radius: 50%;
     cursor: pointer;
 }
