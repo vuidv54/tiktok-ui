@@ -5,9 +5,10 @@
         width: 100%;
         color: var(--text-color);
         font-weight: 600;
-        font-family: Arial, Helvetica, sans-serif;
         margin-left: 0;
         padding: 10px 16px;
+        border-radius: 0;
+        line-height: 2rem;
         justify-content: flex-start;
 
         &:hover {
@@ -18,4 +19,26 @@
 
 .menu-popper {
     padding-bottom: 8px;
+}
+
+// Header title
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.back-btn {
+    width: 50px;
+    line-height: 50px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
