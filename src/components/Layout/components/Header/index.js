@@ -1,18 +1,10 @@
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-    faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
-    faCoins,
     faEllipsisVertical,
-    faGear,
-    faKeyboard,
-    faLanguage,
     faMagnifyingGlass,
-    faSignOut,
     faSpinner,
-    faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 
@@ -25,12 +17,24 @@ import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
+import {
+    CheckIcon,
+    CoinIcon,
+    EnglishLanguageIcon,
+    InboxIcon,
+    KeyboardIcon,
+    LogOutIcon,
+    MessageIcon,
+    ProfileIcon,
+    SettingIcon,
+} from '~/components/Icons';
 
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <FontAwesomeIcon icon={faLanguage} />,
+        icon: <EnglishLanguageIcon className={cx('menu-item-icon')} />,
         title: 'English',
         children: {
             title: 'Language',
@@ -49,35 +53,35 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <FontAwesomeIcon icon={faCircleQuestion} />,
+        icon: <CheckIcon className={cx('menu-item-icon')} />,
         title: 'Feedback and help',
         to: '/feedback',
     },
     {
-        icon: <FontAwesomeIcon icon={faKeyboard} />,
+        icon: <KeyboardIcon className={cx('menu-item-icon')} />,
         title: 'Keyboard shortcuts',
     },
 ];
 
 const currentMenuUser = [
     {
-        icon: <FontAwesomeIcon icon={faUser} />,
+        icon: <ProfileIcon className={cx('menu-item-icon')} />,
         title: 'View profile',
         to: '/@f8education',
     },
     {
-        icon: <FontAwesomeIcon icon={faCoins} />,
+        icon: <CoinIcon className={cx('menu-item-icon')} />,
         title: 'Get coins',
         to: '/getcoins',
     },
     {
-        icon: <FontAwesomeIcon icon={faGear} />,
+        icon: <SettingIcon className={cx('menu-item-icon')} />,
         title: 'Settings',
         to: '/settings',
     },
     ...MENU_ITEMS,
     {
-        icon: <FontAwesomeIcon icon={faSignOut} />,
+        icon: <LogOutIcon className={cx('menu-item-icon')} />,
         title: 'Log out',
         to: '/logout',
         separate: true,
@@ -139,9 +143,22 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy delay={150} content="Upload video">
+                            <Tippy delay={150} content="Message">
                                 <button className={cx('actions-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <MessageIcon
+                                        width="3.2rem"
+                                        height="3.2rem"
+                                        className={cx('actions-icon')}
+                                    />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={150} content="Inbox">
+                                <button className={cx('actions-btn')}>
+                                    <InboxIcon
+                                        width="3.8rem"
+                                        height="3.8rem"
+                                        className={cx('actions-icon')}
+                                    />
                                 </button>
                             </Tippy>
                         </>
@@ -157,10 +174,11 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 alt="Nguyen Van A"
-                                src="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
+                                src="https://scontent.fdad3-6.fna.fbcdn.net/v/t1.6435-9/98348224_1195485754119500_7486024874763223040_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=CFBTy7BQmeoAX_gD_C_&_nc_ht=scontent.fdad3-6.fna&oh=00_AT_E1AyZAUKmHj4BaaD-cGMTsVTyu1Y5M4VlAfYAnqpsCA&oe=6317E83D"
+                                fallback="https://static.fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                             />
                         ) : (
                             <button className={cx('more-btn')}>
