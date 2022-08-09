@@ -159,6 +159,7 @@ function Header() {
                                         height="3.8rem"
                                         className={cx('actions-icon')}
                                     />
+                                    <span className={cx('badge')}>12</span>
                                 </button>
                             </Tippy>
                         </>
